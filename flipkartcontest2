@@ -1,0 +1,24 @@
+1.WAVE ARRAY
+class Solution:
+    def convertToWave(self, arr, N):
+        arr.sort() 
+        for i in range(0,N-1,2):
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+        return arr
+        
+2.STRANGE MATRIX
+def solve(self, r, c):
+        # code here
+        maxi=0
+        j=-1
+        for i in range(c):
+            if(self.get(0,i)==1):
+                j=i
+                break
+        if(j==-1):
+            j=c-1
+        for i in range(r):
+            while(j>=0 and self.get(i,j)==1):
+                j-=1
+                maxi=i
+        return maxi
